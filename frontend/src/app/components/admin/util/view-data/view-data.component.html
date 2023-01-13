@@ -1,0 +1,35 @@
+<h2>{{ ucFirst(nameData) }}</h2>
+<hr />
+<button class="btn btn-primary btn-sm" (click)="onAddDataEvent($event)">
+  Add New {{ nameData }}
+</button>
+<hr />
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let data of listData | async">
+    <tr>
+      <td>{{ data.id }}</td>
+      <td>
+        {{ data.name ? data.name : getFormatName ? getFormatName(data) : '' }}
+      </td>
+      <td colspan="2">
+        <!--        <Button class="btn btn-info item">View</Button>-->
+        <button class="btn btn-warning item" (click)="onEdit(data)">
+          Edit
+        </button>
+        <button class="btn btn-danger item" (click)="onDeleteData(data.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary btn-sm" (click)="routePrinterForm()">
+  Печатная форма
+</button>

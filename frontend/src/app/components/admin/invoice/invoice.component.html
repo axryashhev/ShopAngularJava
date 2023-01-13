@@ -1,0 +1,7 @@
+<app-view-data
+  [nameData]="nameData"
+  [listData]="listInvoice"
+  (addDataEvent)="toAddData()"
+  (editDataEvent)="onEditData($event)"
+  (deleteDataEvent)="onDelete($event)"
+  [getFormatName]="toStringData"></app-view-data>

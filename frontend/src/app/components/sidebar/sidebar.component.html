@@ -1,0 +1,47 @@
+<div class="sidebar">
+  <div class="widget">
+    <h6 class="upper">Search Shop</h6>
+    <form>
+      <!--      onChange={e => SetSearch(e.target.value)}-->
+      <!--      value={search}-->
+      <input #search type="text" placeholder="Search.." class="form-control" />
+    </form>
+  </div>
+  <div class="widget">
+    <h6 class="upper">Categories</h6>
+    <ul class="nav d-block" *ngFor="let category of categories | async">
+      <li>
+        <!--        onClick={ (e) => handleCatSearce( e,data.id ) }-->
+        <!--        (click)="filterCategory(category.id)"-->
+        <a (click)="filterCategory(category.id)">{{ category.name }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="widget">
+    <h6 class="upper">Trademarks</h6>
+    <div class="tags clearfix" *ngFor="let trademark of trademarks | async">
+      <!--      {-->
+      <!--      tags.map(data =>-->
+      <!--          <a onClick={ (e) => handleTagSearch(e,data.id) } href="http">{data.name}</a>-->
+      <!--                )-->
+      <!--      }-->
+      <a (click)="filterTrademark(trademark.id)">{{ trademark.name }}</a>
+    </div>
+  </div>
+
+  <div class="widget">
+    <h6 class="upper">Trending Products</h6>
+    <ul class="nav product-list" *ngFor="let product of popularProduct | async">
+      <li (click)="navigateToProduct(product.id)">
+        <div class="product-thumbnail">
+          <img src="{{ product.photo }}" alt="" />
+        </div>
+        <div class="product-summary">
+          <a [routerLink]="[product.id]">{{ product.name }}</a
+          ><span>{{ product.price }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

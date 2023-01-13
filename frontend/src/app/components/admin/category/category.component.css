@@ -1,0 +1,16 @@
+.item {
+  height: 40px;
+}
+.sample-animation {
+  transition: all linear 0.5s;
+}
+.sample-animation.ng-hide {
+  opacity: 0;
+}
+#alertDiv{
+  margin-top: 10px;
+}
+h2 {
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}

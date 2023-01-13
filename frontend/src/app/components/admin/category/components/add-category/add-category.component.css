@@ -1,0 +1,20 @@
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #EF2D56;
+}
+.form-control {
+  padding: 18px 24px;
+  height: 55px;
+  border-radius: 0;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  box-shadow: none;
+  border-color: #e7e7e7;
+}
+h3 {
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}

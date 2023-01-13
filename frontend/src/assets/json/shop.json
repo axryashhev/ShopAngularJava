@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "id_shipment": 1,
+    "id_request": 1,
+    "id_products_in_stores": 1,
+    "id_store_inventory": 1,
+    "id_address": 1,
+    "name": "shop1",
+    "phone": "543521",
+    "email": "email1@mail.ru"
+  },
+  {
+    "id": 2,
+    "id_shipment": 2,
+    "id_request": 2,
+    "id_products_in_stores": 2,
+    "id_store_inventory": 2,
+    "id_address": 2,
+    "name": "shop2",
+    "phone": "432123",
+    "email": "email2@mail.ru"
+  },
+  {
+    "id": 3,
+    "id_shipment": 3,
+    "id_request": 3,
+    "id_products_in_stores": 3,
+    "id_store_inventory": 3,
+    "id_address": 3,
+    "name": "shop3",
+    "phone": "535563",
+    "email": "email3@mail.ru"
+  },
+  {
+    "id": 4,
+    "id_shipment": 4,
+    "id_request": 4,
+    "id_products_in_stores": 4,
+    "id_store_inventory": 4,
+    "id_address": 4,
+    "name": "shop4",
+    "phone": "453554",
+    "email": "email4@mail.ru"
+  }
+]

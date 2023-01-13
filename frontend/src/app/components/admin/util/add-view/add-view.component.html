@@ -1,0 +1,66 @@
+<h2>{{ getLabelName() }}</h2>
+<hr />
+<a routerLink="../{{ nameData }}" class="btn btn-sm btn-primary"
+  >All {{ nameData }}</a
+>
+<hr />
+<form>
+  <div *ngIf="viewData">
+    <div *ngFor="let item of viewData | keyvalue; trackBy: trackByFn">
+      <div class="form-group">
+        <div class="form-label">{{ item.key }}</div>
+        <input
+          class="form-control"
+          [ngStyle]="{
+            'padding-top': checkDate(item.value, item.key) ? '0px' : '20px'
+          }"
+          type="{{ checkType(item.value, item.key) }}"
+          [(ngModel)]="viewData[item.key]"
+          name="{{ item.key }}" />
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let item of dataSelect">
+    <div class="form-group">
+      <div class="form-label">{{ item.name }}</div>
+      <select
+        class="form-control"
+        [(ngModel)]="item.keyValue"
+        name="{{ item.name }}">
+        <option value="">Select</option>
+        <option *ngFor="let tag of item.value | async" [ngValue]="tag.id">
+          {{ tag.name || getNameData(tag, item.api) }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div
+    class="form-check form-group"
+    style="margin-top: 20px"
+    *ngIf="statusData">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      [checked]="statusData.value"
+      (change)="onCheckboxChange($event)"
+      id="flexCheckDefault" />
+    <label class="form-check-label" for="flexCheckDefault">
+      {{ statusData.name }}
+    </label>
+  </div>
+
+  <div
+    class="form-group"
+    *ngIf="viewData && viewData!!['photo']"
+    style="margin-top: 15px">
+    <img src="{{ viewData['photo'] }}" width="450" height="450" />
+  </div>
+
+  <div class="form-group">
+    <button (click)="onPublish()" class="btn btn-primary btn-sm">
+      {{ getActionName() }}
+    </button>
+  </div>
+</form>

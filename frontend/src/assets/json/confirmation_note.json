@@ -1,0 +1,26 @@
+[
+  {
+    "id": 12,
+    "id_user": 9,
+    "create_date": "2022-12-21",
+    "status": true
+  },
+  {
+    "id": 13,
+    "id_user": 10,
+    "create_date": "2022-12-21",
+    "status": true
+  },
+  {
+    "id": 14,
+    "id_user": 11,
+    "create_date": "2022-12-21",
+    "status": true
+  },
+  {
+    "id": 15,
+    "id_user": 12,
+    "create_date": "2022-12-21",
+    "status": true
+  }
+]

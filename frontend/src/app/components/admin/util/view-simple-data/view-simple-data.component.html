@@ -1,0 +1,47 @@
+<h2 style="margin-top: auto">{{ ucFirst(nameData) }}</h2>
+<hr />
+<!--variant="success" onClick="{" handleAddForm }-->
+<!--(click)="toggle()"-->
+<button class="btn btn-success item" (click)="toggle()">
+  Add New {{ nameData }}
+</button>
+<hr />
+<!--<app-add-category [visible]="show_dialog"></app-add-category>-->
+<app-add-simple-view
+  [visible]="show_dialog"
+  [nameData]="nameData"
+  [id]="choiceId"
+  (addNewEvent)="onAddNewEvent($event)"
+  [value]="newValue"></app-add-simple-view>
+<app-modify-data
+  [nameData]="nameData"
+  [choiceId]="choiceId"
+  (editDataEvent)="onEditData($event)"
+  (closeModalEvent)="onClose($event)"
+  [choiceName]="choiceName"></app-modify-data>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of data | async; let i = index">
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.name }}</td>
+      <td colspan="2">
+        <!--        <Button class="btn btn-info item">View</Button>-->
+        <Button
+          class="btn btn-warning item"
+          (click)="selectData(item.id, item.name)"
+          >Edit</Button
+        >
+        <Button class="btn btn-danger item" (click)="deleteData(item.id)"
+          >Delete</Button
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,85 @@
+<div>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 hidden-sm hidden-xs">
+          <app-sidebar></app-sidebar>
+          <!--                  <Sidebar Setproducts={ Setproducts } cats={ cats } tags={ tags } />-->
+        </div>
+        <div class="col-md-9">
+          <div class="shop-menu">
+            <div class="row">
+              <div class="col-sm-8">
+                <h6 class="upper">Displaying results</h6>
+              </div>
+              <!--              <div class="col-sm-4">-->
+              <!--                <select-->
+              <!--                  name="type"-->
+              <!--                  class="form-select form-select-lg md-3"-->
+              <!--                  style="margin: auto; height: 55px">-->
+              <!--                  <option selected="selected">Sort By</option>-->
+              <!--                  <option value="">What's new</option>-->
+              <!--                  <option value="">Price high to low</option>-->
+              <!--                  <option value="">Price low to high</option>-->
+              <!--                </select>-->
+              <!--              </div>-->
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div
+                class="col-md-4 col-sm-6"
+                *ngFor="let product of showProducts | async">
+                <div class="shop-product">
+                  <div class="product-thumb">
+                    <a [routerLink]="[product.id]">
+                      <img src="{{ product.photo }}" alt="" class="img" />
+                    </a>
+                    <div class="product-overlay">
+                      <a
+                        (click)="addToCart(product)"
+                        class="btn btn-color-out btn-sm"
+                        >Add To Cart<i class="ti-bag"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <h4 class="upper">
+                      <a>{{ product.name }}</a>
+                    </h4>
+                    <span *ngIf="product.price" style="margin-right: 12px"
+                      >{{ product.price }}
+                    </span>
+                    <!--                    <span *ngIf="product.sale_price" style="color: red">{{-->
+                    <!--                      product.sale_price | currency-->
+                    <!--                    }}</span>-->
+                    <div class="save-product">
+                      <a><i class="icon-heart"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="pagination">
+              <li>
+                <a aria-label="Previous"
+                  ><span aria-hidden="true"><i class="ti-arrow-left"></i></span
+                ></a>
+              </li>
+              <li class="active"><a>1</a></li>
+              <li><a>2</a></li>
+              <li><a>3</a></li>
+              <li><a>4</a></li>
+              <li><a>5</a></li>
+              <li>
+                <a aria-label="Next"
+                  ><span aria-hidden="true"><i class="ti-arrow-right"></i></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

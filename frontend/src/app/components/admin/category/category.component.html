@@ -1,0 +1,41 @@
+<h2 style="margin-top: auto">Category</h2>
+<hr />
+<!--variant="success" onClick="{" handleAddForm }-->
+<!--(click)="toggle()"-->
+<button class="btn btn-success item" (click)="toggle()">
+  Add New Category
+</button>
+<hr />
+<app-add-category [visible]="show_dialog" (addNewEvent)="onAddData($event)"></app-add-category>
+<app-modify-data
+  [nameData]="nameData"
+  [choiceId]="choiceId"
+  (closeModalEvent)="onClose($event)"
+  (editDataEvent)="editData($event)"
+  [choiceName]="choiceName"></app-modify-data>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let category of categories | async; let i = index">
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ category.name }}</td>
+      <td colspan="2">
+        <!--        <Button class="btn btn-info item">View</Button>-->
+        <button
+          class="btn btn-warning item"
+          (click)="selectData(category.id, category.name)">
+          Edit
+        </button>
+        <button class="btn btn-danger item" (click)="deleteData(category.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

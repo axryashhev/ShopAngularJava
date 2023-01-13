@@ -1,0 +1,25 @@
+<div *ngIf="choiceId && choiceId !== -1">
+  <h3>Edit {{ nameData }}</h3>
+  <form>
+    <div class="form-group allal">
+      <input
+        type="text"
+        name="name {{ nameData }}"
+        class="form-control allal"
+        [(ngModel)]="choiceName"
+        placeholder="{{ choiceName }}" />
+    </div>
+    <div class="form-group mt-3">
+      <button class="btn btn-info btn-sm" type="sumbit" (click)="onEditData()">
+        Edit
+      </button>
+      <button
+        class="btn btn-danger btn-sm"
+        type="sumbit"
+        (click)="onCloseModal($event)">
+        Close
+      </button>
+    </div>
+  </form>
+  <hr />
+</div>

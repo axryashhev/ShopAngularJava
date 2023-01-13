@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": "0",
+      "name": "rtbrtg",
+      "regular_price": 150,
+      "sale_price": 120,
+      "description": "trbhthnttyn ytn",
+      "categoryId": "1",
+      "tagId": "2",
+      "photo": "https://media.gettyimages.com/photos/blank-black-tshirt-front-with-clipping-path-picture-id483960103?s=612x612",
+      "count": 12,
+      "rating": "3"
+    },
+    {
+      "name": "Stylish Short Sleeve ",
+      "regular_price": 300,
+      "sale_price": 150,
+      "description": "Grameen Fashion  is a trusted and reliable source for all your garment related needs from Bangladesh. Grameen Fashion  manufactures and supplies quality products in all categories at a competitive price range from their own and sister production facility. It's a  cotton t-shirt with a premium finishing goods.\n ",
+      "rating": "3",
+      "categoryId": "8",
+      "tagId": "5",
+      "photo": "https://media.gettyimages.com/photos/blank-black-tshirt-front-with-clipping-path-picture-id483960103?s=612x612",
+      "id": "2",
+      "count": 34
+    }
+  ]
+}
+

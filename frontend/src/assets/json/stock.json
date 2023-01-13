@@ -1,0 +1,32 @@
+[
+  {
+    "id": 2,
+    "id_product": 1,
+    "id_user": 4,
+    "id_address": 1
+  },
+  {
+    "id": 3,
+    "id_product": 2,
+    "id_user": 5,
+    "id_address": 2
+  },
+  {
+    "id": 4,
+    "id_product": 3,
+    "id_user": 6,
+    "id_address": 3
+  },
+  {
+    "id": 5,
+    "id_product": 4,
+    "id_user": 7,
+    "id_address": 4
+  },
+  {
+    "id": 6,
+    "id_product": 5,
+    "id_user": 8,
+    "id_address": 5
+  }
+]

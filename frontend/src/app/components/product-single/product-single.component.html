@@ -1,0 +1,291 @@
+<div *mobxAutorun>
+  <section>
+    <div class="container">
+      <div class="single-product-details">
+        <div class="row">
+          <div class="col-md-6">
+            <div
+              data-options='{"animation": "slide", "controlNav": true}'
+              class="flexslider nav-inside control-nav-dark">
+              <img src="{{ product?.photo }}" alt="" />
+            </div>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+            <div class="title mt-0">
+              <h2>
+                {{ product?.name }}
+                <span class="red-dot"></span>
+              </h2>
+              <p class="m-0">Бесплатная доставка по всему миру</p>
+            </div>
+            <div class="single-product-price">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h3>
+                    <!--                    <del>{{ product?.price }}</del>-->
+                    <span style="margin-left: 10px">{{ product?.price }}</span>
+                  </h3>
+                </div>
+                <div class="col-xs-6 text-right">
+                  <app-rating rate="5"></app-rating>
+                </div>
+              </div>
+            </div>
+            <div class="single-product-desc">
+              <p>{{ product?.description }}</p>
+            </div>
+            <div class="single-product-add">
+              <form action="#" class="inline-form">
+                <div class="input-group">
+                  <!--                  <input type='number' placeholder='QTY' min={1} value={count}-->
+                  <!--                  onChange={(e: any) => setCount(e.target.value)}-->
+                  <!--                  class='form-control' />-->
+                  <span class="input-group-btn">
+                    <button
+                      type="button"
+                      class="btn btn-color"
+                      (click)="addToCard(product)">
+                      Add to Cart
+                      <i class="ti-bag"></i>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+            <div class="single-product-list">
+              <ul>
+                <li>
+                  <span>Категория:</span>
+                  <a href="">{{ category?.name }}</a>
+                </li>
+                <li>
+                  <span>Количество на складе:</span>
+                  <span>{{ ' ' + product?.count + ' ' + units?.name }}</span>
+                </li>
+                <li>
+                  <span>Торговая марка:</span>
+                  <a href="">{{ trademark?.name }}</a>
+                </li>
+                <li *ngIf="!!product?.date_expiration">
+                  <span>Дата производства: </span>
+                  <a href="">{{ product?.date_manufacture }}</a>
+                </li>
+                <li *ngIf="!!product?.date_expiration">
+                  <span>Дата производства: </span>
+                  <a href="">{{ product?.date_manufacture }}</a>
+                </li>
+                <li *ngIf="!!product?.date_expiration">
+                  <span>Дата истечения срока: </span>
+                  <a href="">{{ product?.date_expiration }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--      <div class="product-tabs">-->
+      <!--        <ul role="tablist" class="nav nav-tabs">-->
+      <!--          <li role="presentation" class="active">-->
+      <!--            <a href="#first-tab" role="tab" data-toggle="tab"> Description </a>-->
+      <!--          </li>-->
+      <!--          <li role="presentation">-->
+      <!--            <a href="#second-tab" role="tab" data-toggle="tab"> Sizes </a>-->
+      <!--          </li>-->
+      <!--          <li role="presentation">-->
+      <!--            <a href="#third-tab" role="tab" data-toggle="tab"> Reviews (3) </a>-->
+      <!--          </li>-->
+      <!--        </ul>-->
+      <!--        <div class="tab-content">-->
+      <!--          <div id="first-tab" role="tabpanel" class="tab-pane active">-->
+      <!--            <p>-->
+      <!--              &lt;!&ndash;              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum&ndash;&gt;-->
+      <!--              &lt;!&ndash;              hic doloribus dolore explicabo, a voluptate optio culpa, aut nulla&ndash;&gt;-->
+      <!--              &lt;!&ndash;              voluptatem sit nam sed molestias adipisci! Eius nulla beatae,&ndash;&gt;-->
+      <!--              &lt;!&ndash;              quidem quae. Praesentium eveniet ullam quos accusamus, ea nemo&ndash;&gt;-->
+      <!--              &lt;!&ndash;              cupiditate. Nemo harum sit, necessitatibus voluptates, sapiente&ndash;&gt;-->
+      <!--              &lt;!&ndash;              dolorum minima, placeat explicabo consequuntur at neque deserunt.&ndash;&gt;-->
+      <!--              {{ product?.description }}-->
+      <!--            </p>-->
+      <!--            &lt;!&ndash;            <p>&ndash;&gt;-->
+      <!--            &lt;!&ndash;              Quidem illum, enim aut, minus nesciunt, distinctio inventore sunt&ndash;&gt;-->
+      <!--            &lt;!&ndash;              autem numquam eveniet non asperiores unde! Corrupti modi minima&ndash;&gt;-->
+      <!--            &lt;!&ndash;              doloremque, illum aperiam nemo.&ndash;&gt;-->
+      <!--            &lt;!&ndash;            </p>&ndash;&gt;-->
+      <!--          </div>-->
+      <!--          <div id="second-tab" role="tabpanel" class="tab-pane">-->
+      <!--            <table class="table table-bordered table-striped">-->
+      <!--              <thead>-->
+      <!--                <tr>-->
+      <!--                  <th class="upper">Size</th>-->
+      <!--                  <th class="upper">Bust (CM)</th>-->
+      <!--                  <th class="upper">Waist (CM)</th>-->
+      <!--                  <th class="upper">Hips (CM)</th>-->
+      <!--                </tr>-->
+      <!--              </thead>-->
+      <!--              <tbody>-->
+      <!--                <tr>-->
+      <!--                  <td>XS</td>-->
+      <!--                  <td>78</td>-->
+      <!--                  <td>60</td>-->
+      <!--                  <td>83</td>-->
+      <!--                </tr>-->
+      <!--                <tr>-->
+      <!--                  <td>S</td>-->
+      <!--                  <td>80</td>-->
+      <!--                  <td>62</td>-->
+      <!--                  <td>86</td>-->
+      <!--                </tr>-->
+      <!--                <tr>-->
+      <!--                  <td>M</td>-->
+      <!--                  <td>88</td>-->
+      <!--                  <td>65</td>-->
+      <!--                  <td>88</td>-->
+      <!--                </tr>-->
+      <!--              </tbody>-->
+      <!--            </table>-->
+      <!--          </div>-->
+      <!--          <div id="third-tab" role="tabpanel" class="tab-pane">-->
+      <!--            <div id="comments">-->
+      <!--              <ul class="comments-list">-->
+      <!--                <li class="rating">-->
+      <!--                  <h5 class="upper">-->
+      <!--                    &lt;!&ndash;                    Jesse Pinkman -{' '}&ndash;&gt;-->
+      <!--                    <span class="rating-stars">-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star"></i>-->
+      <!--                    </span>-->
+      <!--                  </h5>-->
+      <!--                  <span class="comment-date"-->
+      <!--                    >Posted on 29 September at 10:41</span-->
+      <!--                  >-->
+      <!--                  <p>-->
+      <!--                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+      <!--                    Explicabo voluptatem quo sit. Sint fugit quidem totam-->
+      <!--                    similique suscipit animi veniam reiciendis, unde facere-->
+      <!--                    quia, optio, at ad possimus perferendis asperiores.-->
+      <!--                  </p>-->
+      <!--                </li>-->
+      <!--                <li class="rating">-->
+      <!--                  <h5 class="upper">-->
+      <!--                    &lt;!&ndash;                    Rust Cohle -{' '}&ndash;&gt;-->
+      <!--                    <span class="rating-stars">-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star"></i>-->
+      <!--                    </span>-->
+      <!--                  </h5>-->
+      <!--                  <span class="comment-date"-->
+      <!--                    >Posted on 29 September at 10:41</span-->
+      <!--                  >-->
+      <!--                  <p>-->
+      <!--                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+      <!--                    Quasi aspernatur vero dolorum asperiores ratione obcaecati-->
+      <!--                    atque quidem aliquid dicta illo, quod, similique suscipit-->
+      <!--                    maiores, aperiam expedita cum. Ut fugiat, dolores.-->
+      <!--                  </p>-->
+      <!--                </li>-->
+      <!--                <li class="rating">-->
+      <!--                  <h5 class="upper">-->
+      <!--                    &lt;!&ndash;                    Arya Stark -{' '}&ndash;&gt;-->
+      <!--                    <span class="rating-stars">-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                      <i class="ti-star full"></i>-->
+      <!--                    </span>-->
+      <!--                  </h5>-->
+      <!--                  <span class="comment-date"-->
+      <!--                    >Posted on 29 September at 10:41</span-->
+      <!--                  >-->
+      <!--                  <p>-->
+      <!--                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+      <!--                    Quasi aspernatur vero dolorum asperiores ratione obcaecati-->
+      <!--                    atque quidem aliquid dicta illo, quod, similique suscipit-->
+      <!--                    maiores, aperiam expedita cum. Ut fugiat, dolores.-->
+      <!--                  </p>-->
+      <!--                </li>-->
+      <!--              </ul>-->
+      <!--            </div>-->
+      <!--            <div id="respond">-->
+      <!--              <h5 class="upper">Leave a rating</h5>-->
+      <!--              <div class="comment-respond">-->
+      <!--                <form class="comment-form">-->
+      <!--                  <div class="form-double">-->
+      <!--                    <div class="form-group">-->
+      <!--                      <input-->
+      <!--                        name="author"-->
+      <!--                        type="text"-->
+      <!--                        placeholder="Name"-->
+      <!--                        class="form-control" />-->
+      <!--                    </div>-->
+      <!--                    <div class="form-group last">-->
+      <!--                      <input-->
+      <!--                        name="email"-->
+      <!--                        type="text"-->
+      <!--                        placeholder="Email"-->
+      <!--                        class="form-control" />-->
+      <!--                    </div>-->
+      <!--                  </div>-->
+      <!--                  <div class="form-group">-->
+      <!--                    <div class="form-select">-->
+      <!--                      <select class="form-control">-->
+      <!--                        <option value="">Chose a rating</option>-->
+      <!--                        <option value="1">1</option>-->
+      <!--                        <option value="2">2</option>-->
+      <!--                        <option value="3">3</option>-->
+      <!--                        <option value="4">4</option>-->
+      <!--                        <option value="5">5</option>-->
+      <!--                      </select>-->
+      <!--                    </div>-->
+      <!--                  </div>-->
+      <!--                  <div class="form-group">-->
+      <!--                    &lt;!&ndash;                    <textarea placeholder='Comment' class='form-control' />&ndash;&gt;-->
+      <!--                  </div>-->
+      <!--                  <div class="form-submit text-right">-->
+      <!--                    <button type="button" class="btn btn-color-out">-->
+      <!--                      Post Comment-->
+      <!--                    </button>-->
+      <!--                  </div>-->
+      <!--                </form>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <div class="related-products">
+        <h5 class="upper">Related Products</h5>
+        <div class="row">
+          <div
+            class="col-md-3 col-sm-6"
+            *ngFor="let related of relatedProducts | async">
+            <div class="shop-product" (click)="show(related.id)">
+              <div class="product-thumb">
+                <!--              to={`/shop/${product.id}`}-->
+                <a>
+                  <img src="{{ related.photo }}" alt="" />
+                </a>
+              </div>
+              <div class="product-info">
+                <h4 class="upper">
+                  <a href="">{{ related?.name }}</a>
+                </h4>
+                <span style="color: #ef2d56">{{ related?.price }}</span>
+                <div class="save-product">
+                  <a href="">
+                    <i class="icon-heart"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

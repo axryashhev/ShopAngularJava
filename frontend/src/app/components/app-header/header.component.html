@@ -1,0 +1,175 @@
+<header
+  class="shadow-sm"
+  style="background: #014171"
+  id="topnav"
+  *mobxAutorun="currentUser">
+  <div class="container">
+    <div class="logo">
+      <!--      <a href="index-2.html">-->
+      <!--        <img src="{" Logo } alt="" class="logo-light" />-->
+      <!--        <img src="{" LogoDrak } alt="" class="logo-dark" />-->
+      <!--      </a>-->
+      <h2 class="LogoApp">METRO</h2>
+    </div>
+    <div class="menu-extras">
+      <div class="menu-item">
+        <div class="cart">
+          <a>
+            <i class="ti-bag"></i
+            ><span class="cart-number">{{ count | async }}</span>
+          </a>
+          <div class="shopping-cart">
+            <div class="shopping-cart-info">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h6 class="upper">
+                    Your Cart <i class="bi bi-trash" (click)="onDelete()"></i>
+                  </h6>
+                </div>
+                <div class="col-xs-6 text-right">
+                  <h6 class="upper">{{ sum | currency }}</h6>
+                </div>
+              </div>
+            </div>
+            <ul
+              class="nav product-list"
+              *ngFor="let product of basketProduct | async">
+              <li>
+                <div class="product-thumbnail">
+                  <img
+                    [routerLink]="['shop/' + product.id]"
+                    src="{{ product.photo }}"
+                    alt="" />
+                </div>
+                <div class="product-summary">
+                  <a [routerLink]="['shop/' + product.id]">{{ product.name }}</a
+                  ><span>{{ product.price }}</span>
+                </div>
+              </li>
+            </ul>
+            <p>
+              <a (click)="checkSum()" class="btn btn-color btn-block btn-sm"
+                >Checkout</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="cart">
+          <a>
+            <i class="bi-person"></i>
+          </a>
+          <div class="shopping-cart">
+            <div class="shopping-cart-info">
+              <div
+                class="row"
+                *ngIf="currentUser | async; then admin; else login">
+                <div class="col-xs-6">
+                  <h6 class="upper">
+                    User:
+                    <!--                    <i class="bi bi-trash" (click)="onDeleteActiveUser()"></i>-->
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <ul class="nav product-list">
+              <div class="product-summary">
+                <ng-template #admin>
+                  <div class="product-thumbnail">
+                    <img src="{{ (currentUser | async)?.photo }}" alt="" />
+                  </div>
+                  <a>{{
+                    (currentUser | async)?.name +
+                      ' ' +
+                      getRoleName((currentUser | async)!.id_role)
+                  }}</a>
+                  <p>
+                    <a
+                      (click)="logout()"
+                      class="btn btn-color btn-block btn-sm"
+                      >Logout</a
+                    >
+                  </p>
+                </ng-template>
+
+                <ng-template #login>
+                  <form role="form" (submit)="loginG()">
+                    <div class="form-group" style="width: 300px">
+                      <label for="username">Username:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        [(ngModel)]="credentials.username" />
+                    </div>
+                    <div class="form-group" style="width: 300px">
+                      <label for="password">Password:</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        [(ngModel)]="credentials.password" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
+                  </form>
+                </ng-template>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="search">
+          <a>
+            <i class="ti-search"></i>
+          </a>
+          <div class="search-form">
+            <form action="" class="inline-form">
+              <div class="input-group">
+                <input
+                  #search
+                  type="text"
+                  placeholder="Search"
+                  class="form-control" />
+                <span class="input-group-btn"
+                  ><button
+                    type="button"
+                    class="btn btn-color"
+                    (click)="goGlobalSearch()">
+                    <span> <i class="ti-search"></i></span>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <a class="navbar-toggle">
+          <div class="lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="navigation">
+      <nav>
+        <ul class="navigation-menu">
+          <li>
+            <a routerLink="shop">Shop</a>
+          </li>
+          <li *ngIf="!!(currentUser | async)">
+            <a routerLink="admin">Admin</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

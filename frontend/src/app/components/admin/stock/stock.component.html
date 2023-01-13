@@ -1,0 +1,7 @@
+<app-view-data
+  [nameData]="nameData"
+  [listData]="listStock"
+  (addDataEvent)="toAddData()"
+  [getFormatName]="toStringData"
+  (editDataEvent)="onEditData($event)"
+  (deleteDataEvent)="onDelete($event)"></app-view-data>

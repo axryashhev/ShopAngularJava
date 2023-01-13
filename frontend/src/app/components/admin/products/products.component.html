@@ -1,0 +1,28 @@
+<h2>Products</h2>
+<hr />
+<button class="btn btn-primary btn-sm" (click)="addProduct()">
+  Add New Product
+</button>
+<hr />
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of products | async; let i = index">
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td colspan="2">
+        <!--        <Button class="btn btn-info item">View</Button>-->
+        <Button class="btn btn-warning item" (click)="onEdit(product)"
+          >Edit</Button
+        >
+        <Button class="btn btn-danger item">Delete</Button>
+      </td>
+    </tr>
+  </tbody>
+</table>

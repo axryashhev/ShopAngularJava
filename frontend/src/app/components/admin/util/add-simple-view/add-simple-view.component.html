@@ -1,0 +1,22 @@
+<div *ngIf="visible">
+  <h3>Add New {{ nameData }}</h3>
+  <form>
+    <div class="form-group allal">
+      <input
+        type="text"
+        [(ngModel)]="value"
+        name="name {{ nameData }}"
+        class="form-control allal"
+        placeholder="{{ nameData }}" />
+    </div>
+    <div class="form-group mt-3">
+      <button
+        class="btn btn-primary btn-sm"
+        type="sumbit"
+        (click)="onAddNew($event)">
+        Add
+      </button>
+    </div>
+  </form>
+  <hr />
+</div>

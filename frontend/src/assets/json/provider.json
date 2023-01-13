@@ -1,0 +1,42 @@
+[
+  {
+    "id": 2,
+    "id_address": 2,
+    "name": "name_2",
+    "cpp": "312312322",
+    "inn": "2421345312",
+    "photo": "https://tatarstan24.tv/resize/shd/images/uploads/news/2022/3/28/8e26e9034d2f644ef91665103906ec13.jpg"
+  },
+  {
+    "id": 1,
+    "id_address": 1,
+    "name": "name_1",
+    "cpp": "312312321",
+    "inn": "2421345311",
+    "photo": "https://aif-s3.aif.ru/images/011/707/29d7043dced25e5f45e701436bf1e984.jpg"
+  },
+  {
+    "id": 4,
+    "id_address": 4,
+    "name": "name_4",
+    "cpp": "312312324",
+    "inn": "2421345314",
+    "photo": "https://tvernews.ru/uploads/m2GtteiOMBjtHdu0RPEqHuxYmLdvDT.jpg"
+  },
+  {
+    "id": 5,
+    "id_address": 5,
+    "name": "name_5",
+    "cpp": "312312325",
+    "inn": "2421345315",
+    "photo": "https://www.shkolazhizni.ru/img/content/i150/150261_big.jpg"
+  },
+  {
+    "id": 3,
+    "id_address": 3,
+    "name": "name_3",
+    "cpp": "312312323",
+    "inn": "2421345313",
+    "photo": "https://shkolazhizni.ru/img/content/i150/150262_intext.jpg"
+  }
+]

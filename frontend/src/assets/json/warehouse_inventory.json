@@ -1,0 +1,32 @@
+[
+  {
+    "id": 2,
+    "id_stock": 2,
+    "date_holding": "2022-12-22",
+    "count": 10
+  },
+  {
+    "id": 3,
+    "id_stock": 3,
+    "date_holding": "2022-12-22",
+    "count": 20
+  },
+  {
+    "id": 4,
+    "id_stock": 4,
+    "date_holding": "2022-12-22",
+    "count": 30
+  },
+  {
+    "id": 5,
+    "id_stock": 5,
+    "date_holding": "2022-12-22",
+    "count": 40
+  },
+  {
+    "id": 6,
+    "id_stock": 6,
+    "date_holding": "2022-12-22",
+    "count": 50
+  }
+]

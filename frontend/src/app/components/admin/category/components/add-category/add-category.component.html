@@ -1,0 +1,24 @@
+<div *ngIf="visible">
+  <h3>Add New Category</h3>
+  <form>
+    <div class="form-group allal">
+      <input
+        type="text"
+        [(ngModel)]="nameCategory"
+        name="nameCategory"
+        class="form-control allal"
+        placeholder="Category Name" />
+    </div>
+    <div class="form-group mt-3">
+      <button
+        class="btn btn-primary btn-sm"
+        type="sumbit"
+        (click)="addCategory()">
+        Add
+      </button>
+    </div>
+  </form>
+  <hr />
+</div>
+
+<!-- (click)="addCategory($event)" -->

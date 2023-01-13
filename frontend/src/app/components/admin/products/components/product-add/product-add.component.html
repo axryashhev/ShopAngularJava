@@ -1,0 +1,46 @@
+<h2>Add New Products</h2>
+<hr />
+<a routerLink="../product" class="btn btn-sm btn-primary">All Products</a>
+<hr />
+<form>
+  <!--  <div class="form-group">-->
+  <!--    <div class="form-label">Photos:</div>-->
+  <!--    <input-->
+  <!--      type="file"-->
+  <!--      name="image"-->
+  <!--      accept="image/png, image/jpeg"-->
+  <!--      (change)="onFileSelected($event)" />-->
+  <!--  </div>-->
+
+  <div *ngFor="let item of viewProduct | keyvalue; trackBy: trackByFn">
+    <div class="form-group">
+      <div class="form-label">{{ item.key }}</div>
+      <input
+        class="form-control"
+        type="{{ checkType(item.value, item.key) }}"
+        [(ngModel)]="viewProduct[item.key]"
+        name="{{ item.key }}" />
+    </div>
+  </div>
+
+  <div *ngFor="let item of dataSelect">
+    <div class="form-group">
+      <div class="form-label">{{ item.name }}</div>
+      <select
+        class="form-control"
+        [(ngModel)]="item.keyValue"
+        name="{{ item.name }}">
+        <option value="">Select</option>
+        <option *ngFor="let tag of item.value | async" [value]="tag.id">
+          {{ tag.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button (click)="onPublish()" class="btn btn-primary btn-sm">
+      Publish
+    </button>
+  </div>
+</form>

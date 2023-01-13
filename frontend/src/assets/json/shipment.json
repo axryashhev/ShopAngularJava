@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "id_shipped_goods": 1,
+    "data_shipment": "2022-12-07"
+  },
+  {
+    "id": 2,
+    "id_shipped_goods": 2,
+    "data_shipment": "2022-12-06"
+  },
+  {
+    "id": 3,
+    "id_shipped_goods": 3,
+    "data_shipment": "2022-12-20"
+  },
+  {
+    "id": 4,
+    "id_shipped_goods": 4,
+    "data_shipment": "2022-12-13"
+  }
+]
